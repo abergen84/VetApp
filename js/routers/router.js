@@ -4,13 +4,24 @@
 
 
 var VetAppRouter = Backbone.Router.extend({
-
-initialize: function(){
 	
+	routes: {
+		"*default": "page1"
+	},
+
+	page1: function(){
+		this.searchview.render();
+	},
+
+	initialize: function(){
+
 	this.appview = new app.AppView(); 
+	this.searchview = new app.SearchView();
+	this.appview.$el.append( this.searchview.el );
 
 	Backbone.history.start();
-}
+	
+	}
 
 
 })
