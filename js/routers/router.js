@@ -6,7 +6,8 @@
 var VetAppRouter = Backbone.Router.extend({
 	
 	routes: {
-		"*default": "page1"
+		"*default": "page1",
+		"vets": "page2"
 	},
 
 	page1: function(){

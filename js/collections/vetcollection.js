@@ -2,6 +2,19 @@
 
 	window.app = window.app || {};
 
+	var Geolocation = Backbone.Model.extend({
+
+    getGeo: function() {
+        var promise = $.Deferred();
+        navigator.geolocation.getCurrentPosition(function() {
+            var p = arguments[0];
+            promise.resolve([p.coords.latitude, p.coords.longitude]);
+        });
+        return promise;
+    }
+
+	});
+
 	var VetOptInCollection = Backbone.Collection.extend({
 
 		model: app.VetOptInModel,
@@ -30,9 +43,10 @@
             	"&client_secret=",
 	            this.clientsecret,
 	            "&v=20130815",
-	            "&near=",
-	            input.city,
-	            ',',
+	            "&ll=",
+	            this.long.toFixed(2),
+            	",",
+            	this.lat.toFixed(2),
 	            "&query=",
 	            input.business
 			].join('');
@@ -44,9 +58,15 @@
 		},
 
 		initialize: function(){
-			this.fetch().then(function(error, collection){
+			var self = this;
+    		this.geoLocation = (new Geolocation()).getGeo().then(function(location){
+	    	self.long = location[0];
+    		self.lat = location[1];
+
+	    	self.fetch().then(function(error, collection){
 		    	console.log(arguments);
 	    	})
+	    })
 		}
 
 

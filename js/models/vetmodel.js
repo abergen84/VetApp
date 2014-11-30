@@ -4,7 +4,7 @@
 
 	var VetOptInModel = Backbone.Model.extend({
 		initialize: function(opts){
-			this.view = new app.SearchView();
+			this.view = new app.VetView();
 		}
 	})
 
