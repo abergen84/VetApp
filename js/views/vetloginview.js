@@ -3,9 +3,9 @@
 	window.app = window.app || {};
 
 	var VetView = Backbone.View.extend({
-
+		
 		tagName: "div",
-		className: "vetsearcharea",
+		className: "#vetlogin",
 		template: "vetsearchview",
 
 		render: function(){
