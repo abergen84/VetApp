@@ -1,8 +1,8 @@
 
-window.onload = app;
+window.onload = start;
 
 // runs when the DOM is loaded
-function app(){
+function start(){
     "use strict";
 
     // load some scripts (uses promises :D)
@@ -36,7 +36,7 @@ function app(){
         document.body.style.opacity = 1;
         // start app?
     
-    var o = $({});
+        var o = $({});
         $.subscribe = function() {
             o.on.apply(o, arguments);
         };

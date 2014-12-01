@@ -12,15 +12,33 @@
 			var self = this;
 			$.get("/templates/" + this.template + ".html", function(template){
 				var html = $(template).html();
-				self.$el.html(html);
+				self.$el.html(html).show();
 			})
 			return this;
 			//this.el.innerHTML = this.html
 		},
 
 		initialize: function(){
+			this.views = {
+				search: $('.searcharea'),
+				vetlogin: $('.vetlogin')
+			}
+			// var self = this;
+			// self.render();
+		},
+
+		events: {
+			"click .vetlogin a": "handleClick",
+		},
+
+		handleClick: function(event){
+			var clicked = event.target;
+			var show = clicked.getAttribute('show');
 			var self = this;
-			self.render();
+			_.forEach(this.views, function(value, key){
+				value.fadeOut();
+			})
+			this.views[show].fadeIn();
 		}
 
 

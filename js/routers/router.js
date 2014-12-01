@@ -1,39 +1,51 @@
-;(function(window, undefined){
+;
+(function(window, undefined) {
 
-	window.app = window.app || {};
-
-
-var VetAppRouter = Backbone.Router.extend({
-	
-	routes: {
-		"*default": "page1",
-		"#vetlogin": "page2"
-	},
-
-	page1: function(){
-		this.searchview = new app.SearchView();
-		this.appview.$el.append( this.searchview.el );
-		this.searchview.render();
-	},
-
-	page2: function(){
-		this.vetloginview = new app.VetView();
-		this.appview.$el.append( this.vetloginview.el );
-		this.vetloginview.render();
-	},
-
-	initialize: function(){
-
-	this.appview = new app.AppView(); 
-	
-
-	Backbone.history.start();
-	
-	}
+    window.app = window.app || {};
 
 
-})
+    var VetAppRouter = Backbone.Router.extend({
 
-app.VetAppRouter = VetAppRouter;
+        routes: {
+            "vetlogin": "page2",
+            "*default": "page1"
+        },
 
-})(window, undefined); 
+        hideAll: function(){
+        	this.views.forEach(function(v){ v.$el.hide(); })
+        },
+
+        page1: function() {
+        	this.hideAll();
+            this.searchview.render();
+        },
+
+        page2: function() {
+        	this.hideAll();
+            this.vetloginview.render();
+        },
+
+        initialize: function() {
+        	// create app view
+        	this.appview = new app.AppView();
+
+        	// create search view
+        	this.searchview = new app.SearchView();
+            this.appview.$el.append(this.searchview.el);
+
+            // create login view
+            this.vetloginview = new app.VetView();
+            this.appview.$el.append(this.vetloginview.el);
+
+            this.views = [this.searchview, this.vetloginview];
+
+            Backbone.history.start();
+
+        }
+
+
+    })
+
+    app.VetAppRouter = VetAppRouter;
+
+})(window, undefined);

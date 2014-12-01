@@ -1,77 +1,79 @@
-;(function(window, undefined){
+;
+(function(window, undefined) {
 
-	window.app = window.app || {};
+    window.app = window.app || {};
 
-	var Geolocation = Backbone.Model.extend({
+    var Geolocation = Backbone.Model.extend({
 
-    getGeo: function() {
-        var promise = $.Deferred();
-        navigator.geolocation.getCurrentPosition(function() {
-            var p = arguments[0];
-            promise.resolve([p.coords.latitude, p.coords.longitude]);
-        });
-        return promise;
-    }
+        getGeo: function() {
+            var promise = $.Deferred();
+            navigator.geolocation.getCurrentPosition(function() {
+                var p = arguments[0];
+                promise.resolve([p.coords.latitude, p.coords.longitude]);
+            });
+            return promise;
+        }
 
-	});
+    });
 
-	var VetOptInCollection = Backbone.Collection.extend({
+    var VetOptInCollection = Backbone.Collection.extend({
 
-		model: app.VetOptInModel,
+        model: app.VetOptInModel,
 
-		createInput: function(){
-			var input = {};
+        createInput: function() {
+            var input = {};
             $(':input').each(function() {
                 input[this.name] = this.value;
-            	})
+            })
             console.log(input);
             return input;
-		},
+        },
 
-		clientid: "JYJ4TFANLM5Y2UOKRV2NJ5DWI4TC5WGLKO5MHXDX2HIDC0IV",
+        clientid: "JYJ4TFANLM5Y2UOKRV2NJ5DWI4TC5WGLKO5MHXDX2HIDC0IV",
 
-		clientsecret: "DY5UM5HYBDAK0PSTGA1RFZPVUUMMQUXLVMQBZD22TAB5ZEPV",
+        clientsecret: "DY5UM5HYBDAK0PSTGA1RFZPVUUMMQUXLVMQBZD22TAB5ZEPV",
 
-		url: function(){
-			
-			var input = this.createInput();
+        url: function() {
 
-			return [
-				"https://api.foursquare.com/v2/venues/search",
-            	"?client_id=",
-            	this.clientid,
-            	"&client_secret=",
-	            this.clientsecret,
-	            "&v=20130815",
-	            "&ll=",
-	            this.long.toFixed(2),
-            	",",
-            	this.lat.toFixed(2),
-	            "&query=",
-	            input.business
-			].join('');
-		},
+            return [
+                "https://api.foursquare.com/v2/venues/search",
+                "?client_id=",
+                this.clientid,
+                "&client_secret=",
+                this.clientsecret,
+                "&v=20130815",
+                "&ll=",
+                this.long.toFixed(2),
+                ",",
+                this.lat.toFixed(2),
+                "&query=",
+                this.search
+            ].join('');
+        },
 
-		parse: function(data){
-			console.log(data);
-			return data;
-		},
+        parse: function(data) {
+            console.log(data);
+            return data;
+        },
 
-		initialize: function(){
-			var self = this;
-    		this.geoLocation = (new Geolocation()).getGeo().then(function(location){
-	    	self.long = location[0];
-    		self.lat = location[1];
+        initialize: function() {
+        },
 
-	    	self.fetch().then(function(error, collection){
-		    	console.log(arguments);
-	    	})
-	    })
-		}
+        getFourSquareLocations: function(searchTerm){
+        	this.search = searchTerm + "+veterinary";
 
+        	var self = this;
+        	var geo = new Geolocation();
+            return geo.getGeo().then(function(location) {
+                self.long = location[0];
+                self.lat = location[1];
 
-	})
+                return self.fetch();
+            })
+        }
 
-	app.VetOptInCollection = VetOptInCollection;
+    })
+
+    app.VetOptInCollection = VetOptInCollection;
 
 })(window, undefined);
