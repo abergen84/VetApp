@@ -31,7 +31,6 @@
 			var searchTerm = this.el.querySelector('input').value;
 			c.getFourSquareLocations(searchTerm).then(function(data){
 				console.log(data);
-			
 				return data;
 			});
 
