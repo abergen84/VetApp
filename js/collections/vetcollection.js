@@ -52,8 +52,8 @@
         },
 
         parse: function(data) {
-            console.log(data);
-            return data;
+            console.log(data.response.venues);
+            return data.response.venues;
         },
 
         initialize: function() {

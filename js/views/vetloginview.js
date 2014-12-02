@@ -30,10 +30,12 @@
 			var c = new app.VetOptInCollection();
 			var searchTerm = this.el.querySelector('input').value;
 			c.getFourSquareLocations(searchTerm).then(function(data){
-				console.log(data)
-				//. ... 
+				console.log(data);
+			
+				return data;
 			});
 
+			var listing = new app.VetListingView();
 		}
 
 	})
