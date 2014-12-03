@@ -5,37 +5,27 @@
 	var VetListingsView = Backbone.View.extend({
 
 		tagName: "div",
-		className: "vetlistings",
-		template: "<h4>{name}</h4>",
+		//className: "#page vetlogin",
+		template: "<h4>{name} <button>select</button></h4>",
 
-		// render: function(){
-		// 	var self = this;
-		// 	$.get("/templates/" + this.template + ".html", function(template){
-		// 		var html = $(template).html();
-		// 		self.$el.html(html).show();
-		// 	})
-		// 	return this;
-		// },
 		render: function(){
-            this.el.innerHTML = _.template(this.template, this.model.attributes);
+            this.el.innerHTML = _.template(this.template, this.model);
         },
 
-        initialize: function(opts) {
-        // this.options = _.extend({}, {
-        //         $container: $('body')
-        //     },
-        //     opts
-        // );
+        initialize: function() {
+        	this.data = _.cloneDeep(this.model);
+        	this.render();
+    	},
 
-        // this.options.$container.append(this.el);
+    	events: {
+    		"click button": "saveToFirebase"
+    	},
 
-        this.render();
-    	
+    	saveToFirebase: function(e){
+    		e.preventDefault();
+    		app.VetsFirebase.add(this.data);
+    		location.hash = "#/";
     	}
-
-
-
-
 
 	})
 

@@ -5,7 +5,8 @@
 	var VetView = Backbone.View.extend({
 		
 		tagName: "div",
-		className: "#page vetlogin",
+		id: "page",
+		className: "vetlogin",
 		template: "vetsearchview",
 
 		render: function(){
@@ -27,14 +28,23 @@
 
 		handleSearch: function(event){
 			event.preventDefault();
-			var c = new app.VetOptInCollection();
-			var searchTerm = this.el.querySelector('input').value;
+
+			var c = new app.VetOptInCollection(),
+				searchTerm = this.el.querySelector('input').value,
+				self = this;
+
 			c.getFourSquareLocations(searchTerm).then(function(data){
-				console.log(data);
-				return data;
+				
+				if(!data.response || !data.response.venues){ return; }
+
+				var venues = data.response.venues;
+				venues.forEach(function(v){
+					var subview = new app.VetListingsView({model: _.extend({}, v)});
+	                self.$el.append(subview.el);
+				})
+
 			});
 
-			var listing = new app.VetListingView();
 		}
 
 	})

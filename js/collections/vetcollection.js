@@ -17,24 +17,11 @@
     });
 
     var VetOptInCollection = Backbone.Collection.extend({
-
         model: app.VetOptInModel,
-
-        createInput: function() {
-            var input = {};
-            $(':input').each(function() {
-                input[this.name] = this.value;
-            })
-            console.log(input);
-            return input;
-        },
-
         clientid: "JYJ4TFANLM5Y2UOKRV2NJ5DWI4TC5WGLKO5MHXDX2HIDC0IV",
-
         clientsecret: "DY5UM5HYBDAK0PSTGA1RFZPVUUMMQUXLVMQBZD22TAB5ZEPV",
 
         url: function() {
-
             return [
                 "https://api.foursquare.com/v2/venues/search",
                 "?client_id=",
@@ -47,7 +34,9 @@
                 ",",
                 this.lat.toFixed(2),
                 "&query=",
-                this.search
+                this.search,
+                "&categoryId=",
+                ["4e52d2d203646f7c19daa8ae","5032897c91d4c4b30a586d69","4bf58dd8d48988d100951735"].join(",")
             ].join('');
         },
 

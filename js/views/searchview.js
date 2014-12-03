@@ -7,6 +7,10 @@
 		className: "searcharea",
 		template: 'search',
 
+		initialize: function(){
+			this.listenTo(app.VetsFirebase, "add", this.appendItemToList)
+		},
+
 		render: function(){
 			var self = this;
 			$.get("./templates/" + this.template + ".html", function(template){
@@ -14,9 +18,11 @@
 				self.$el.html(html).show();
 			})
 			return this;
+		},
+
+		appendItemToList: function(model, collection, extraData){
+			this.$el.append("<li>"+model.get('name')+"</li>")
 		}
-
-
 	})
 
 app.SearchView = SearchView;
