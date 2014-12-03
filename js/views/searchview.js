@@ -21,7 +21,18 @@
 		},
 
 		appendItemToList: function(model, collection, extraData){
-			this.$el.append("<li>"+model.get('name')+"</li>")
+			this.$el.append("<li>"+model.get('name')+"</li>"+"<button>schedule</button>")
+		},
+
+		events: {
+			"click button": "schedulePopup"
+		},
+
+		schedulePopup: function(event){
+			var self = this;
+			event.preventDefault();
+			var subview = new app.VetScheduleView();
+			self.$el.append(subview.el);
 		}
 	})
 

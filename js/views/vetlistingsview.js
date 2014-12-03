@@ -5,7 +5,6 @@
 	var VetListingsView = Backbone.View.extend({
 
 		tagName: "div",
-		//className: "#page vetlogin",
 		template: "<h4>{name} <button>select</button></h4>",
 
 		render: function(){
