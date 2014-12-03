@@ -1,7 +1,22 @@
 <div>
 	<h2>Scheduler</h2>
-	<form><input type="date"></form>
-	<form><input type="text" placeholder="Reason?"></form>
-	<h5>Morning or afternoon appointment preference?</h5>
-	<button>Morning</button><button>Afternoon</button>
+
+	<form>
+	<h6>Preferred appointment date</h6>
+	<input type="date">
+	<h6>Type of pet</h6>
+	<select>
+	<option value="Cat">Cat</option>
+	<option value="Dog">Dog</option>
+	<option value="Other">Other</option>
+	</select>	
+	<input type="text" placeholder="Reason for appointment?">
+	</form>
+	<h5>Morning or afternoon appointment?</h5>
+	<form>
+	<input type="radio" name="appt" value="morning">Morning
+	<br>
+	<input type="radio" name="appt" value="afternoon">Afternoon
+	</form>
+	<button>Submit to Vet</button>
 </div>
