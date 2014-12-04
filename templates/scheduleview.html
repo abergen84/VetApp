@@ -3,30 +3,32 @@
 
 	<form>
 
-	<input type="text" name="name" placeholder="Your name"> 
-	<input type="text" name="number" placeholder="Your phone number">
-	<input type="text" name="email" placeholder="Your e-mail address">
+	<input required type="text" name="name" placeholder="Your name"> 
+	<input required type="number" name="number" placeholder="Your phone number">
+	<input required type="email" name="email" placeholder="Your e-mail address">
 	
 	<h6>Preferred appointment date</h6>
 	
-	<input type="date" name="date">
+	<input required type="date" name="date">
 	
 	<h6>Type of pet</h6>
 	
-	<select>
+	<select required name="animal">
 	<option value="Cat">Cat</option>
 	<option value="Dog">Dog</option>
 	<option value="Other">Other</option>
 	</select>	
 	
-	<input type="text" name="reason" placeholder="Reason for appointment?">
+	<input required type="text" name="reason" placeholder="Reason for appointment?">
 	
 	<h5>Morning or afternoon appointment?</h5>
 	
-	<input type="radio" name="appt_morning" value="morning">Morning
-	<br>
-	<input type="radio" name="appt_afternoon" value="afternoon">Afternoon
+	<select required name="appt">
+	<option value="Morning">Morning</option>
+	<option value="Afternoon">Afternoon</option>
+	</select>
 
+	<br>
 	<input type="submit" value="Submit to Vet">
 
 	</form>

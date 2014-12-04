@@ -1,33 +1,35 @@
-;(function(window, undefined){
+;
+(function(window, undefined) {
 
-	window.app = window.app || {};
+    window.app = window.app || {};
 
-	var VetListingsView = Backbone.View.extend({
+    var VetListingsView = Backbone.View.extend({
 
-		tagName: "div",
-		template: "<h4>{name} <br> <form><input type='text' placeholder='E-mail to receive appointment requests'></form> <br> <button>select</button></h4>",
+        tagName: "div",
+        template: "<h4>{name} <br> <form><input type='text' name='vetemail' placeholder='E-mail to receive appointment requests'></form> <br> <button>select</button></h4>",
 
-		render: function(){
+        render: function() {
             this.el.innerHTML = _.template(this.template, this.model);
         },
 
         initialize: function() {
-        	this.data = _.cloneDeep(this.model);
-        	this.render();
-    	},
+            // this.data = _.cloneDeep(this.model);
+            this.render();
+        },
 
-    	events: {
-    		"click button": "saveToFirebase"
-    	},
+        events: {
+            "click button": "saveToFirebase"
+        },
 
-    	saveToFirebase: function(e){
-    		e.preventDefault();
-    		app.VetsFirebase.add(this.data);
-    		location.hash = "#/";
-    	}
+        saveToFirebase: function(e) {
+            e.preventDefault();
+            this.model.email = this.el.querySelector('input[name="vetemail"]').value;
+            app.VetsFirebase.add(this.model);
+            location.hash = "#/";
+        }
 
-	})
+    })
 
-app.VetListingsView = VetListingsView;
+    app.VetListingsView = VetListingsView;
 
 })(window, undefined);

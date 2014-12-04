@@ -1,55 +1,60 @@
-;(function(window, undefined){
+;
+(function(window, undefined) {
 
-	window.app = window.app || {};
+    window.app = window.app || {};
 
-	var VetView = Backbone.View.extend({
-		
-		tagName: "div",
-		id: "page",
-		className: "vetlogin",
-		template: "vetsearchview",
+    var VetView = Backbone.View.extend({
 
-		render: function(){
-			var self = this;
-			$.get("./templates/" + this.template + ".html", function(template){
-				var html = $(template).html();
-				self.$el.html(html).show();
-			})
-			return this;
-		},
+        tagName: "div",
+        id: "page",
+        className: "vetlogin",
+        template: "vetsearchview",
 
-		initialize: function(){
-			// this.render();
-		},
+        render: function() {
+            var self = this;
+            $.get("./templates/" + this.template + ".html", function(template) {
+                var html = $(template).html();
+                self.$el.html(html).show();
+            })
+            return this;
+        },
 
-		events: {
-			"submit form": "handleSearch"
-		},
+        initialize: function() {
+            // this.render();
+        },
 
-		handleSearch: function(event){
-			event.preventDefault();
+        events: {
+            "submit form": "handleSearch"
+        },
 
-			var c = new app.VetOptInCollection(),
-				searchTerm = this.el.querySelector('input').value,
-				self = this;
+        handleSearch: function(event) {
+            event.preventDefault();
 
-			c.getFourSquareLocations(searchTerm).then(function(data){
-				
-				if(!data.response || !data.response.venues){ return; }
+            var c = new app.VetOptInCollection(),
+                searchTerm = this.el.querySelector('input').value,
+                self = this;
 
-				var venues = data.response.venues;
-				venues.forEach(function(v){
-					var subview = new app.VetListingsView({model: _.extend({}, v)});
-	                self.$el.append(subview.el);
-				})
+            c.getFourSquareLocations(searchTerm).then(function(data) {
 
-			});
+                if (!data.response || !data.response.venues) {
+                    return;
+                }
 
-		}
+                var venues = data.response.venues;
+                venues.forEach(function(v) {
+                    var subview = new app.VetListingsView({
+                        model: _.extend({}, v)
+                    });
+                    self.$el.append(subview.el);
+                })
 
-	})
+            });
+
+        }
+
+    })
 
 
-app.VetView = VetView;
+    app.VetView = VetView;
 
 })(window, undefined);

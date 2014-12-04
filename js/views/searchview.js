@@ -8,7 +8,8 @@
 		template: 'search',
 
 		initialize: function(){
-			this.listenTo(app.VetsFirebase, "add", this.appendItemToList)
+			this.listenTo(app.VetsFirebase, "sync", this.render)
+			// this.listenTo(app.VetsFirebase, "add", this.render)
 		},
 
 		render: function(){
@@ -16,27 +17,12 @@
 			$.get("./templates/" + this.template + ".html", function(template){
 				var html = $(template).html();
 				self.$el.html(html).show();
+				app.VetsFirebase.each(function(model){
+					var searchitemview = new app.SearchItemView({ model: model })
+					self.$el.append(searchitemview.el)
+				})
 			})
 			return this;
-		},
-
-		appendItemToList: function(model, collection, extraData){
-			this.$el.append("<li>"+model.get('name')+"</li>"+"<button>schedule</button>")
-		},
-
-		events: {
-			"click button": "schedulePopup"
-		},
-
-		schedulePopup: function(event){
-			var self = this;
-			console.log(event);
-			console.log(this)
-			event.preventDefault();
-			var subview = new app.VetScheduleView();
-			$(subview.el).insertAfter(event.target); // -> take the new view, adds it after the event.target (thing you clicked on)
-			//$(event.target).append(subview.el);  // -> makes the button big with the el
-			console.log(this.el);
 		}
 	})
 
