@@ -5,7 +5,7 @@
 	var VetListingsView = Backbone.View.extend({
 
 		tagName: "div",
-		template: "<h4>{name} <button>select</button></h4>",
+		template: "<h4>{name} <br> <form><input type='text' placeholder='E-mail to receive appointment requests'></form> <br> <button>select</button></h4>",
 
 		render: function(){
             this.el.innerHTML = _.template(this.template, this.model);

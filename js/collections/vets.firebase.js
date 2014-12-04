@@ -1,7 +1,4 @@
-
-
-;
-(function(window, undefined) {
+;(function(window, undefined) {
 
     window.app = window.app || {};
 

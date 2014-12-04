@@ -18,8 +18,16 @@
 
 		initialize: function(){
 			this.render();
-		}
+		},
 
+		events: {
+			"submit form": "mandrillEmail"
+		},
+
+		mandrillEmail: function(e){
+			e.preventDefault();
+			var send = new app.Email().sendTheMail();
+		}
 
 	})
 

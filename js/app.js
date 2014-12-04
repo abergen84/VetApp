@@ -12,7 +12,10 @@ function start(){
         {url: "./bower_components/backbone/backbone.js"},
         {url: "./bower_components/firebase/firebase.js"},
         {url: "./bower_components/backfire/dist/backbonefire.js"},
+        {url: "./bower_components/mandrill-api/mandrill.js"},
+        {url: "./bower_components/mandrill-api/mandrill.min.js"},
         {url: "./bower_components/foundation/js/foundation.js"},
+       
 
         // CSS
         {url: "./dist/style.css"},
@@ -25,6 +28,7 @@ function start(){
         {url: "./js/models/vetmodel.js"},
         {url: "./js/collections/vetcollection.js"},
         {url: "./js/collections/vets.firebase.js"},
+        {url: "./js/collections/emailcollection.js"},
 
         //views
         
