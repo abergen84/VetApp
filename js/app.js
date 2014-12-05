@@ -12,7 +12,6 @@ function start(){
         {url: "./bower_components/backbone/backbone.js"},
         {url: "./bower_components/firebase/firebase.js"},
         {url: "./bower_components/backfire/dist/backbonefire.js"},
-        // {url: "./bower_components/mandrill-api/mandrill.js"},
         {url: "./bower_components/mandrill-api/mandrill.min.js"},
         {url: "./bower_components/foundation/js/foundation.js"},
        
@@ -21,7 +20,7 @@ function start(){
         {url: "./dist/style.css"},
         {url: "./bower_components/normalize.css/normalize.css"},
         {url: "./bower_components/typeplate-starter-kit/css/typeplate.css"},
-        {url: "./bower_components/foundation/css/foundation.css"},
+        //{url: "./bower_components/foundation/css/foundation.css"},
 
         //vet rollup
         {url: "./js/models/vetmodel.js"},
