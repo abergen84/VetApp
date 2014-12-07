@@ -4,6 +4,7 @@
 
 	var SearchView = Backbone.View.extend({
 		tagName: "div",
+		//id: "page",
 		className: "searcharea",
 		template: 'search',
 

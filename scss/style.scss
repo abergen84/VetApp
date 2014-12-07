@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
 @import '../bower_components/foundation/scss/foundation/settings';
 @import '../bower_components/foundation/scss/foundation';
 
@@ -58,15 +59,72 @@ body {
     height: 100%;
     background: url('/images/bg.jpg') no-repeat center center;
     background-size: cover;
+    // padding-top: 200px;
+
 
 }
 
-h1 {
+#vetlink{
+    display: block;
+    //text-align: center;
+    //top: 50%;
+}
+
+#vetlink a{
+    //vertical-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.header p {
     text-align: center;
     color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 5em;
 }
 
-.header{
-    color: white;
+.search-container {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
     
+input#search-bar{
+  margin: 0 auto;
+  width: 100%;
+  height: 65px;
+  padding: 0 20px;
+  font-size: 1em;
+  border: 3px solid white;
+  outline: none;
+  &:focus{
+    border: 3px solid black;
+    transition: 0.35s ease;
+    color: yellow;
+    &::-webkit-input-placeholder{
+      transition: opacity 0.45s ease; 
+      opacity: 0;
+     }
+    &::-moz-placeholder {
+      transition: opacity 0.45s ease; 
+      opacity: 0;
+     }
+    &:-ms-placeholder {
+     transition: opacity 0.45s ease; 
+     opacity: 0;
+     }    
+   }
+ }
+
+.search-icon{
+  position: relative;
+  float: right;
+  width: 100px;
+  height: 100px;
+  top: -80px;
+  right: -80px;
+}
