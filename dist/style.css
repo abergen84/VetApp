@@ -5572,11 +5572,19 @@ body {
   -webkit-transition: opacity 0.25s ease;
           transition: opacity 0.25s ease;
   height: 100%;
-  background: url('../images/bg.jpg') no-repeat center center;
+  background: url('/images/bg.jpg') no-repeat center center;
   background-size: cover; }
 
 #vetlink {
-  display: block; }
+  width: 300px;
+  display: block;
+  margin: 0 auto;
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
 
 #vetlink a {
   color: white;
@@ -5599,7 +5607,18 @@ body {
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%); }
 
-input#search-bar {
+.vet-search-container {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+
+input#search-bar, input#vetsearchbar {
   margin: 0 auto;
   width: 100%;
   height: 65px;
@@ -5607,19 +5626,19 @@ input#search-bar {
   font-size: 1em;
   border: 3px solid white;
   outline: none; }
-  input#search-bar:focus {
+  input#search-bar:focus, input#vetsearchbar:focus {
     border: 3px solid black;
     -webkit-transition: 0.35s ease;
             transition: 0.35s ease;
-    color: yellow; }
-    input#search-bar:focus::-webkit-input-placeholder {
+    color: black; }
+    input#search-bar:focus::-webkit-input-placeholder, input#vetsearchbar:focus::-webkit-input-placeholder {
       -webkit-transition: opacity 0.45s ease;
               transition: opacity 0.45s ease;
       opacity: 0; }
-    input#search-bar:focus::-moz-placeholder {
+    input#search-bar:focus::-moz-placeholder, input#vetsearchbar:focus::-moz-placeholder {
       transition: opacity 0.45s ease;
       opacity: 0; }
-    input#search-bar:focus:-ms-placeholder {
+    input#search-bar:focus:-ms-placeholder, input#vetsearchbar:focus:-ms-placeholder {
       transition: opacity 0.45s ease;
       opacity: 0; }
 
@@ -5630,3 +5649,17 @@ input#search-bar {
   height: 100px;
   top: -80px;
   right: -80px; }
+
+div.transparent {
+  width: 75%;
+  height: 40%;
+  margin: 0 auto;
+  top: 40%;
+  left: 50%;
+  position: fixed;
+  display: block;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 2px solid black;
+  background: rgba(255, 255, 255, 0.5); }
