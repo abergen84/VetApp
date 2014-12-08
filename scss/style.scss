@@ -95,6 +95,11 @@ h3#scheduleheader{
     padding: .5rem;
 }
 
+h3.thankyou{
+    display: none;
+    margin: 0 auto;
+}
+
 .search-container {
   max-width: 960px;
   display: block;
@@ -166,6 +171,10 @@ input#search-bar, input#vetsearchbar {
          opacity: 0;
      }    
    }
+ }
+
+ input#apptreason{
+    margin-top: .5rem;
  }
 
 .search-icon{

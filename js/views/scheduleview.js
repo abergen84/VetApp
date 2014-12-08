@@ -47,7 +47,7 @@
                         "email": to_email,
                     }], //need to edit to take in vets email (from form)
                     "subject": "You have a new Appointment Request from: " + formData.name,
-                    "html": _.template("<h2>You have a new appointment request!</h2><br> <table border='1'> <tr><td>Client Name</td><td>{name}</td></tr><br> <tr><td>Client Number</td><td>{number}</td></tr> <br> <tr><td>Client E-mail</td><td>{email}</td></tr> <br> <tr><td>Animal Type</td><td>{animal}</td></tr> <br> <tr><td>Reason for Appointment</td><td>{reason}</td></tr> <br> <tr><td>Requested Appointment Date</td><td>{date}</td></tr> <br> <tr><td>Requested Time Slot</td><td>{appt}</td></tr> </table>", formData),
+                    "html": _.template("<h2>You have a new appointment request!</h2><br> <table border='1'> <tr><td>Client Name</td><td>{name}</td></tr><br> <tr><td>Client Number</td><td>{number}</td></tr> <br> <tr><td>Client E-mail</td><td>{email}</td></tr> <br> <tr><td>Animal Type</td><td>{animal}</td></tr> <br> <tr><td>Reason for Appointment</td><td>{reason}</td></tr> <br> <tr><td>Requested Appointment Date</td><td>{date}</td></tr> <br> <tr><td>Requested Time Slot</td><td>{appt}</td></tr> </table> <br><br> <h2>Please reply directly to this email to setup with the client, or call them at the number provided.</h2>", formData),
                     "track_opens": true,
                     "track_clicks": true,
                     "merge_vars": [{
@@ -79,6 +79,9 @@
                 }
             };
             // debugger;
+            location.hash = "#/";
+            $('.thankyou').css({"display":"block"});
+            
             return $.post("https://mandrillapp.com/api/1.0/messages/send.json/", params);
         }
 

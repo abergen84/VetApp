@@ -5600,6 +5600,10 @@ h3 {
 h3#scheduleheader {
   padding: 0.5rem; }
 
+h3.thankyou {
+  display: none;
+  margin: 0 auto; }
+
 .search-container {
   max-width: 960px;
   display: block;
@@ -5663,6 +5667,9 @@ input#vetemailaddress {
     input#vetemailaddress:focus:-ms-placeholder {
       transition: opacity 0.45s ease;
       opacity: 0; }
+
+input#apptreason {
+  margin-top: 0.5rem; }
 
 .search-icon {
   position: relative;
