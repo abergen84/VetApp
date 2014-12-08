@@ -13,12 +13,7 @@
             var self = this;
             $.get("./templates/" + this.template + ".html").then(function(template) {
                 self.el.innerHTML = _.template(template, self.model);
-                //debugger;
-                //var html = $(template).html();
-                //self.$el.html(html).show();
             })
-            //return this;
-            
         },
 
         initialize: function() {
@@ -35,6 +30,8 @@
             this.model.email = this.el.querySelector('input[name="vetemail"]').value;
             app.VetsFirebase.add(this.model);
             location.hash = "#/";
+
+            //$("#vetlink").css({"display":"none"});
         }
 
     })

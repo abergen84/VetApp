@@ -64,17 +64,18 @@ body {
 
 #vetlink{
     width: 300px;
-    display: block;
-    margin: 0 auto;
+    //display: block;
+    //margin: 0 auto;
     position: fixed;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    //top: 70%;
+    bottom: 0;
+    left: 0;
+    //transform: translate(-50%,-50%);
 }
 
 #vetlink a{
     color: white;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .header p {
@@ -90,6 +91,10 @@ h3 {
     font-family: 'Raleway', sans-serif;
 }
 
+h3#scheduleheader{
+    padding: .5rem;
+}
+
 .search-container {
   max-width: 960px;
   display: block;
@@ -100,11 +105,19 @@ h3 {
     max-width: 960px;
     display: block;
     margin: 0 auto;
-    padding-top: 40px;
+}
+
+img#arrow{
+    position: fixed;
+    left: 0;
+    bottom: 3rem;
+    max-width: 100px;
+    max-height: 100px;
 }
     
 input#search-bar, input#vetsearchbar {
   margin: 0 auto;
+  margin-top: 2rem;
   width: 100%;
   height: 65px;
   padding: 0 20px;
@@ -169,11 +182,28 @@ input#search-bar, input#vetsearchbar {
   height: 60px;
   background-color: green;
   color: white;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 #vetconfirmemail{
     background-color: green;
     color: white;
+}
+
+#userschedulebutton{
+    background-color: green;
+    color: white;
+    max-height: 50px;
+    line-height: 0;
+}
+
+#submitemailtovet{
+    background-color: green;
+    color: white;
+    width: 130px;
+    height: 50px;
+    margin-top: .5rem;
 }
 
 div.transparent{
@@ -196,4 +226,30 @@ div.transparentlistings{
     -ms-transform: translate(-50%,-50%);
     border: 2px solid white;
     background:rgba(255,255,255,0.6);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+div.transparentoptins{
+    max-width: 960px;
+    margin: 0 auto;
+    display: block;
+    -ms-transform: translate(-50%,-50%);
+    border: 2px solid white;
+    background:rgba(255,255,255,0.6);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+form.transparentform{
+    max-width: 960px;
+    margin: 0 auto;
+    display: block;
+    -ms-transform: translate(-50%,-50%);
+    border: 2px solid white;
+    background:rgba(255,255,255,0.6);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
 }
