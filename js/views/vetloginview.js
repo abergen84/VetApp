@@ -28,7 +28,10 @@
 
         handleSearch: function(event) {
             event.preventDefault();
-
+            
+            
+            $(".transparent").css({"display":"none"});
+            //document.getElementById('transparent').style.display = 'none';
             //this.$el.hide();
 
             var c = new app.VetOptInCollection(),

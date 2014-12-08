@@ -11,12 +11,14 @@
 
         render: function() {
             var self = this;
-            $.get("./templates/" + this.template + ".html", function(template) {
-                var html = $(template).html();
-                self.$el.html(html).show();
+            $.get("./templates/" + this.template + ".html").then(function(template) {
+                self.el.innerHTML = _.template(template, self.model);
+                //debugger;
+                //var html = $(template).html();
+                //self.$el.html(html).show();
             })
-            return this;
-            //this.el.innerHTML = _.template(this.template, this.model);
+            //return this;
+            
         },
 
         initialize: function() {

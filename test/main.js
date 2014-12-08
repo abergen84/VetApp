@@ -12,6 +12,7 @@
     //--- your setup code goes here (i.e. create test instances of your Constructors)
     //--- your setup code goes here
 
+    var router = new app.VetAppRouter();
     //--- your tests go here
     // an example test suite
     describe("Array", function(){
@@ -23,6 +24,14 @@
         })
     })
     //--- your tests go here
+
+    describe("VetAppRouter", function(){
+        describe("#initialize()", function(){
+            it("should create 3 views, an AppView, a SearchView, and a VetView", function(){
+                expect(router.views.length).to.equal(2);
+            })
+        })
+    })
 
     mocha.globals(["jQuery"]);
     mocha.run();

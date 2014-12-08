@@ -5572,7 +5572,7 @@ body {
   -webkit-transition: opacity 0.25s ease;
           transition: opacity 0.25s ease;
   height: 100%;
-  background: url('./bg.jpg') no-repeat center center;
+  background: url('./emma.jpg') no-repeat center center;
   background-size: cover;
   background-attachment: fixed; }
 
@@ -5588,28 +5588,27 @@ body {
           transform: translate(-50%, -50%); }
 
 #vetlink a {
-  color: #00FF00;
+  color: white;
   font-size: 20px; }
 
 .header p {
   text-align: center;
   color: white;
   font-family: 'Raleway', sans-serif;
-  font-size: 5em; }
+  font-size: 4em;
+  font-weight: bold;
+  margin-bottom: 20px; }
+
+h3 {
+  font-family: 'Raleway', sans-serif; }
 
 .search-container {
-  width: 50%;
+  max-width: 960px;
   display: block;
-  margin: 0 auto;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%); }
+  margin: 0 auto; }
 
 .vet-search-container {
-  width: 960px;
+  max-width: 960px;
   display: block;
   margin: 0 auto;
   padding-top: 40px; }
@@ -5620,10 +5619,10 @@ input#search-bar, input#vetsearchbar {
   height: 65px;
   padding: 0 20px;
   font-size: 1em;
-  border: 3px solid white;
+  border: 2px solid white;
   outline: none; }
   input#search-bar:focus, input#vetsearchbar:focus {
-    border: 3px solid black;
+    border: 2px solid black;
     -webkit-transition: 0.35s ease;
             transition: 0.35s ease;
     color: black; }
@@ -5639,14 +5638,13 @@ input#search-bar, input#vetsearchbar {
       opacity: 0; }
 
 input#vetemailaddress {
-  float: left;
-  width: 30%;
+  max-width: 500px;
   height: 40px;
   font-size: 14px;
-  border: 1px solid black;
+  border: 2px solid black;
   outline: none; }
   input#vetemailaddress:focus {
-    border: 3px solid black;
+    border: 2px solid black;
     -webkit-transition: 0.35s ease;
             transition: 0.35s ease;
     color: black; }
@@ -5676,12 +5674,20 @@ input#vetemailaddress {
   color: white; }
 
 #vetconfirmemail {
-  width: 130px;
-  height: 40px;
   background-color: green;
   color: white; }
 
 div.transparent {
+  max-width: 960px;
+  margin: 0 auto;
+  display: block;
+  -ms-transform: translate(-50%, -50%);
+  border: 2px solid white;
+  background: rgba(255, 255, 255, 0.6);
+  font-family: 'Raleway', sans-serif;
+  padding: 0.5rem 1rem 0.5rem 1rem; }
+
+div.transparentlistings {
   max-width: 960px;
   margin: 0 auto;
   display: block;

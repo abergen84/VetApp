@@ -12,6 +12,7 @@ var js = ["./*.js", "./js/*.js"];
 
 function prefix() {
     return gulp.src(css)
+        .on('error', console.error.bind(console))
         .pipe(autoprefixer({}))
         .pipe(gulp.dest('./dist'));
 }

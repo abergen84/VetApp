@@ -57,12 +57,9 @@
 body {
     transition: opacity .25s ease;
     height: 100%;
-    background: url('./bg.jpg') no-repeat center center;
+    background: url('./emma.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
-    // padding-top: 200px;
-
-
 }
 
 #vetlink{
@@ -76,8 +73,7 @@ body {
 }
 
 #vetlink a{
-    //vertical-align: center;
-    color: #00FF00;
+    color: white;
     font-size: 20px;
 }
 
@@ -85,21 +81,23 @@ body {
     text-align: center;
     color: white;
     font-family: 'Raleway', sans-serif;
-    font-size: 5em;
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-family: 'Raleway', sans-serif;
 }
 
 .search-container {
-  width: 50%;
+  max-width: 960px;
   display: block;
   margin: 0 auto;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
 }
 
 .vet-search-container {
-    width: 960px;
+    max-width: 960px;
     display: block;
     margin: 0 auto;
     padding-top: 40px;
@@ -111,10 +109,10 @@ input#search-bar, input#vetsearchbar {
   height: 65px;
   padding: 0 20px;
   font-size: 1em;
-  border: 3px solid white;
+  border: 2px solid white;
   outline: none;
   &:focus{
-    border: 3px solid black;
+    border: 2px solid black;
     transition: 0.35s ease;
     color: black;
     &::-webkit-input-placeholder{
@@ -133,16 +131,13 @@ input#search-bar, input#vetsearchbar {
  }
 
  input#vetemailaddress {
-    //margin: 0 auto;
-    float: left;
-    width: 30%;
+    max-width: 500px;
     height: 40px;
-    //padding: 0 20px;
     font-size: 14px;
-    border: 1px solid black;
+    border: 2px solid black;
     outline: none;
     &:focus{
-        border: 3px solid black;
+        border: 2px solid black;
         transition: 0.35s ease;
         color: black;
         &::-webkit-input-placeholder{
@@ -170,19 +165,13 @@ input#search-bar, input#vetsearchbar {
 }
 
 #vetsubmitbutton{
-  //position: relative;
-  //float: right;
   width: 130px;
   height: 60px;
-  //top: -62px;
-  //right: -150px;
   background-color: green;
   color: white;
 }
 
 #vetconfirmemail{
-    width: 130px;
-    height: 40px;
     background-color: green;
     color: white;
 }
@@ -191,40 +180,20 @@ div.transparent{
     max-width: 960px;
     margin: 0 auto;
     display: block;
--ms-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     border: 2px solid white;
     background: rgba(255, 255, 255, 0.6);
+    font-family: 'Raleway', sans-serif;
+    padding: .5rem 1rem .5rem 1rem;
 
-    //width: 75%;
-    //margin: 0 auto;
-    //top: 40%;
-    //left: 50%;
-    //display: block;
-    // //transform: translate(-50%,-50%);
-    //border: 2px solid white;
-    //background:rgba(255,255,255,0.6);
 }
 
-// p.textheader{
-//     font-family: 'Raleway', sans-serif;
-//     font-size: 2em;
-//     font-weight: bold;
-// }
 
-// p.text {
-//     color: white;
-//     // display: inline;
-// }
-
-// div.transparentlistings{
-//     width: 50%;
-//     height: 40%;
-//     margin: 0 auto;
-//     top: 40%;
-//     left: 50%;
-//     position: fixed;
-//     display: block;
-//     //transform: translate(-50%,-50%);
-//     border: 1px solid black;
-//     background:rgba(255,255,255,0.5);
-// }
+div.transparentlistings{
+    max-width: 960px;
+    margin: 0 auto;
+    display: block;
+    -ms-transform: translate(-50%,-50%);
+    border: 2px solid white;
+    background:rgba(255,255,255,0.6);
+}
