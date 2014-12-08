@@ -5609,15 +5609,10 @@ body {
           transform: translate(-50%, -50%); }
 
 .vet-search-container {
-  width: 50%;
+  width: 960px;
   display: block;
   margin: 0 auto;
-  position: fixed;
-  top: 70%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%); }
+  padding-top: 40px; }
 
 input#search-bar, input#vetsearchbar {
   margin: 0 auto;
@@ -5687,24 +5682,9 @@ input#vetemailaddress {
   color: white; }
 
 div.transparent {
-  width: 75%;
-  height: 30%;
+  max-width: 960px;
   margin: 0 auto;
-  top: 40%;
-  left: 50%;
-  position: fixed;
   display: block;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   border: 2px solid white;
   background: rgba(255, 255, 255, 0.6); }
-
-p.textheader {
-  font-family: 'Raleway', sans-serif;
-  font-size: 2em;
-  font-weight: bold; }
-
-p.text {
-  color: white;
-  display: inline; }

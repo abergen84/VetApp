@@ -99,13 +99,10 @@ body {
 }
 
 .vet-search-container {
-  width: 50%;
-  display: block;
-  margin: 0 auto;
-  position: fixed;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+    width: 960px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 40px;
 }
     
 input#search-bar, input#vetsearchbar {
@@ -191,28 +188,33 @@ input#search-bar, input#vetsearchbar {
 }
 
 div.transparent{
-    width: 75%;
-    height: 30%;
+    max-width: 960px;
     margin: 0 auto;
-    top: 40%;
-    left: 50%;
-    position: fixed;
     display: block;
-    transform: translate(-50%,-50%);
+-ms-transform: translate(-50%, -50%);
     border: 2px solid white;
-    background:rgba(255,255,255,0.6);
+    background: rgba(255, 255, 255, 0.6);
+
+    //width: 75%;
+    //margin: 0 auto;
+    //top: 40%;
+    //left: 50%;
+    //display: block;
+    // //transform: translate(-50%,-50%);
+    //border: 2px solid white;
+    //background:rgba(255,255,255,0.6);
 }
 
-p.textheader{
-    font-family: 'Raleway', sans-serif;
-    font-size: 2em;
-    font-weight: bold;
-}
+// p.textheader{
+//     font-family: 'Raleway', sans-serif;
+//     font-size: 2em;
+//     font-weight: bold;
+// }
 
-p.text {
-    color: white;
-    display: inline;
-}
+// p.text {
+//     color: white;
+//     // display: inline;
+// }
 
 // div.transparentlistings{
 //     width: 50%;
