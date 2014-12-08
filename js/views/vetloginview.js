@@ -29,6 +29,8 @@
         handleSearch: function(event) {
             event.preventDefault();
 
+            //this.$el.hide();
+
             var c = new app.VetOptInCollection(),
                 searchTerm = this.el.querySelector('input').value,
                 self = this;
@@ -48,6 +50,7 @@
                 })
 
             });
+
 
         }
 

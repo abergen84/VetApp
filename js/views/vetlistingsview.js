@@ -6,10 +6,17 @@
     var VetListingsView = Backbone.View.extend({
 
         tagName: "div",
-        template: "<h4>{name} <br> <form><input type='text' name='vetemail' placeholder='E-mail to receive appointment requests'></form> <br> <button>select</button></h4>",
+        className: "vetlistings",
+        template: "vetlistings",
 
         render: function() {
-            this.el.innerHTML = _.template(this.template, this.model);
+            var self = this;
+            $.get("./templates/" + this.template + ".html", function(template) {
+                var html = $(template).html();
+                self.$el.html(html).show();
+            })
+            return this;
+            //this.el.innerHTML = _.template(this.template, this.model);
         },
 
         initialize: function() {
