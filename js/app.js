@@ -26,6 +26,7 @@ function start(){
         {url: "./js/models/vetmodel.js"},
         {url: "./js/collections/vetcollection.js"},
         {url: "./js/collections/vets.firebase.js"},
+        // {url: "./js/collections/querycollection.js"},
 
         //views
         
@@ -35,6 +36,7 @@ function start(){
         {url: "./js/views/vetloginview.js"},
         {url: "./js/views/vetlistingsview.js"},
         {url: "./js/views/searchitem.js"},
+        //{url: "./js/views/thankyouview.js"},
 
         //router
         
@@ -61,7 +63,7 @@ function start(){
         var router = new app.VetAppRouter();
 
 
-    })
+    });
 
 }
     

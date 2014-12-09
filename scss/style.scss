@@ -95,9 +95,12 @@ h3#scheduleheader{
     padding: .5rem;
 }
 
-h3.thankyou{
+p.thankyou{
     display: none;
     margin: 0 auto;
+    //text-align: center;
+    color: black;
+    padding-top: .5rem;
 }
 
 .search-container {

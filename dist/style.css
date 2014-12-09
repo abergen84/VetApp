@@ -5600,9 +5600,11 @@ h3 {
 h3#scheduleheader {
   padding: 0.5rem; }
 
-h3.thankyou {
+p.thankyou {
   display: none;
-  margin: 0 auto; }
+  margin: 0 auto;
+  color: black;
+  padding-top: 0.5rem; }
 
 .search-container {
   max-width: 960px;

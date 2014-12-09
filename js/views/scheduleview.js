@@ -78,10 +78,8 @@
                     }]
                 }
             };
-            // debugger;
-            location.hash = "#/";
-            $('.thankyou').css({"display":"block"});
-            
+
+            //$('.thankyou').css({"display":"block"});
             return $.post("https://mandrillapp.com/api/1.0/messages/send.json/", params);
         }
 
