@@ -36,7 +36,7 @@ function start(){
         {url: "./js/views/vetloginview.js"},
         {url: "./js/views/vetlistingsview.js"},
         {url: "./js/views/searchitem.js"},
-        //{url: "./js/views/thankyouview.js"},
+        {url: "./js/views/thankyouview.js"},
 
         //router
         

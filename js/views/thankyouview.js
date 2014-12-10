@@ -4,12 +4,13 @@ window.app = window.app || {};
 
 var ThankYouView = Backbone.View.extend({
 	tagName: "div",
-	className: "thankyou",
+	className: "thankyous",
 	template: "<h3 class='thankyou'>Thank you, your appointment request has been sent.</h3> <br> <button>Return to Homepage</button>",
 
 
 	render: function(){
-		this.el.innerHTML = _.template(this.template, this.model);
+		this.el.innerHTML = this.template;
+		// _.template(this.template, this.model);
 	},
 
 	initialize: function(){

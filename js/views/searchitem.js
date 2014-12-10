@@ -26,6 +26,7 @@
 		},
 
 		togglePopup: function(event){
+			// debugger;
 			event.preventDefault();
 			var d = this.scheduleView.el.style.display;
 			if(d === 'none'){

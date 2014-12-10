@@ -31,7 +31,7 @@
         },
 
         events: {
-            "submit form": "mandrillEmail"
+            "submit #emailform": "mandrillEmail"
         },
 
         mandrillEmail: function(e) {
@@ -79,8 +79,13 @@
                 }
             };
 
-            //$('.thankyou').css({"display":"block"});
-            return $.post("https://mandrillapp.com/api/1.0/messages/send.json/", params);
+            
+            $.post("https://mandrillapp.com/api/1.0/messages/send.json/", params);
+            // this.$el.hide();
+            var thankyouview = new app.ThankYouView();
+            this.$el.append(thankyouview.el);
+
+            // $('.thankyou').css({"display":"block"});
         }
 
     })

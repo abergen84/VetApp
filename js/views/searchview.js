@@ -14,12 +14,12 @@
 		},
 
 		events: {
-			"submit form": "render"
+			"submit #searchform": "render"
 			// "change input": "liveFilter"
 		},
 
 		render: function(e){
-			// debugger;
+			//debugger;
 			e && e.preventDefault && e.preventDefault();
 			var self = this;
 
