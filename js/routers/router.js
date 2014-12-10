@@ -48,6 +48,7 @@
             //create thank you view
             this.thankyouview = new app.ThankYouView();
             this.appview.$el.append(this.thankyouview.el);
+            this.appview.thankyouview = this.thankyouview;
 
             // store all views in an array
             this.views = [this.searchview, this.vetloginview, this.thankyouview];
