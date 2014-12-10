@@ -121,19 +121,38 @@ input#apptreason{
 #submitemailtovet{
     background-color: green;
     color: white;
-    width: 130px;
-    height: 50px;
+    max-width: 130px;
+    max-height: 50px;
     margin-top: .5rem;
 }
 
-//********TEXT UPON SUBMITTING SCHEDULE FORM*********//
+//********POPUP BOX UPON SUBMITTING SCHEDULE FORM*********//
 
 p.thankyou{
-    display: none;
-    margin: 0 auto;
-    //text-align: center;
+    //display: none;
+    // margin: 0 auto;
+    text-align: center;
     color: black;
     padding-top: .5rem;
+}
+
+div#myModal{
+    //max-width: 960px;
+    //margin: 0 auto;
+    //display: block;
+    //-ms-transform: translate(-50%,-50%);
+    border: 2px solid white;
+    background:rgba(255,255,255,0.9);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+button#homepage{
+    background-color: green;
+    color: white;
+    margin: 0 auto;
+    max-width: 100px;
 }
 
 //*********MAIN SEARCH CONTAINER BOX ON HOMEPAGE*******//

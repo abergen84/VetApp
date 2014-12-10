@@ -5619,15 +5619,27 @@ input#apptreason {
 #submitemailtovet {
   background-color: green;
   color: white;
-  width: 130px;
-  height: 50px;
+  max-width: 130px;
+  max-height: 50px;
   margin-top: 0.5rem; }
 
 p.thankyou {
-  display: none;
-  margin: 0 auto;
+  text-align: center;
   color: black;
   padding-top: 0.5rem; }
+
+div#myModal {
+  border: 2px solid white;
+  background: rgba(255, 255, 255, 0.9);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem 1rem 1rem 1rem; }
+
+button#homepage {
+  background-color: green;
+  color: white;
+  margin: 0 auto;
+  max-width: 100px; }
 
 .search-container {
   max-width: 960px;

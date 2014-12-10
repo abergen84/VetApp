@@ -7,6 +7,7 @@
     var VetAppRouter = Backbone.Router.extend({
 
         routes: {
+            // "thankyou": "page3",
             "vetlogin": "page2",
             "*default": "page1"
         },
@@ -27,6 +28,11 @@
             this.vetloginview.render();
         },
 
+        // page3: function(){
+        //     this.hideAll();
+        //     this.thankyouview.render();
+        // },
+
         initialize: function() {
             // create app view
             this.appview = new app.AppView();
@@ -39,8 +45,12 @@
             this.vetloginview = new app.VetView();
             this.appview.$el.append(this.vetloginview.el);
 
+            //create thank you view
+            this.thankyouview = new app.ThankYouView();
+            this.appview.$el.append(this.thankyouview.el);
+
             // store all views in an array
-            this.views = [this.searchview, this.vetloginview];
+            this.views = [this.searchview, this.vetloginview, this.thankyouview];
 
 
             Backbone.history.start();
