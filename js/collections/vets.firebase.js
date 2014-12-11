@@ -1,4 +1,5 @@
 ;(function(window, undefined) {
+    "use strict";
 
     window.app = window.app || {};
 

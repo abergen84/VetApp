@@ -1,5 +1,6 @@
 ;(function(window, undefined) {
-
+    "use strict";
+    
     window.app = window.app || {};
 
     var VetView = Backbone.View.extend({
