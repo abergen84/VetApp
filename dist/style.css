@@ -5570,59 +5570,59 @@ th.hide-for-touch {
 /**
  * GENERAL
  */
-body {
-  -webkit-transition: opacity 0.25s ease;
-          transition: opacity 0.25s ease;
-  height: 100%;
+html {
   background: url('./emma.jpg') no-repeat center center;
   background-size: cover;
   background-attachment: fixed; }
 
-.header {
+html::after {
+  content: "";
+  display: block;
   width: 100%;
+  height: 100%;
   position: fixed;
   top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1; }
+
+html, body {
+  height: auto !important; }
+
+body {
+  min-height: 100vh;
+  -webkit-transition: opacity 0.25s ease;
+          transition: opacity 0.25s ease;
+  background-color: transparent; }
+
+.header {
+  width: 100%;
   background: #0ac5f4;
   z-index: 1; }
 
 .footer {
-  width: 100%;
-  height: 50px;
-  bottom: 0;
-  position: fixed;
-  background: #0ac5f4;
-  z-index: 1; }
+  margin-top: 10em;
+  position: relative;
+  background: #0ac5f4; }
 
-#facebookicon {
-  position: fixed;
+.icons {
+  position: absolute;
+  top: 50%;
   right: 0;
-  bottom: 0;
-  padding-right: 6rem;
-  padding-bottom: 0.25rem;
-  color: white; }
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 0.25rem 0.5rem; }
 
-#twittericon {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  padding-right: 3.5rem;
-  padding-bottom: 0.25rem;
-  color: white; }
-
-#instagramicon {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  padding-right: 1rem;
-  padding-bottom: 0.25rem;
+#facebookicon, #twittericon, #instagramicon {
   color: white; }
 
 #vetlink {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  padding-left: 1rem;
-  padding-bottom: 0.25rem; }
+  position: relative;
+  padding: 0.5rem 1rem; }
+
+#vetlink h4 {
+  margin: 0; }
 
 #vetlink a {
   font-family: 'Open Sans';
@@ -5631,9 +5631,12 @@ body {
   font-size: 1rem; }
 
 img#arrow {
-  position: fixed;
-  left: 1rem;
-  bottom: 4rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(10px, -120%);
+      -ms-transform: translate(10px, -120%);
+          transform: translate(10px, -120%);
   max-width: 125px;
   max-height: 125px; }
 
@@ -5675,46 +5678,26 @@ p#contact {
   padding-right: 9%;
   padding-top: 3rem; }
 
-div.sloganone {
-  top: 0;
-  position: fixed;
-  left: 50%;
-  margin-top: 7.5%;
-  max-width: 960px;
-  max-height: 50%;
-  z-index: -1; }
-
-div.slogantwo {
-  top: 0;
-  position: fixed;
-  left: 40%;
-  margin-top: 12.5%;
-  max-width: 960px;
-  z-index: -1; }
-
-div.sloganthree {
-  top: 0;
-  position: fixed;
-  left: 60%;
-  margin-top: 17.5%;
-  max-width: 960px;
-  max-height: 50%;
-  z-index: -1; }
-
-#sloganone {
+.slogans {
+  padding: 7em 0 0.5em 0;
   font-family: 'Lato';
   font-weight: 300;
-  font-size: 3rem; }
+  max-width: 960px;
+  text-align: center;
+  margin: 0 auto; }
 
-#slogantwo {
-  font-family: 'Lato';
+.slogans p {
+  font-size: 3rem;
+  margin-bottom: 0;
+  line-height: 1em;
+  color: white; }
+
+.slogantwo p {
   font-weight: 400;
-  font-size: 3rem; }
+  font-style: italic; }
 
-#sloganthree {
-  font-family: 'Lato';
-  font-weight: 700;
-  font-size: 3rem; }
+.sloganthree p {
+  font-weight: 700; }
 
 h3 {
   font-family: 'Open Sans', sans-serif; }
@@ -5753,16 +5736,14 @@ input#apptreason {
   font-family: 'Open Sans';
   font-style: italic; }
 
-form.transparentform {
-  max-width: 758px;
-  margin: 0 auto;
-  display: block;
-  -ms-transform: translate(-50%, -50%);
-  border: 2px solid white;
-  background: rgba(255, 255, 255, 0.6);
+.transparentform {
+  border-radius: 15px;
+  background: rgba(0, 255, 255, 0.6);
   margin-top: 1rem;
   margin-bottom: 1rem;
-  padding: 1rem 1rem 1rem 1rem; }
+  padding: 1rem;
+  -webkit-animation: fadeIn 0.25s ease both;
+          animation: fadeIn 0.25s ease both; }
 
 p.thankyou {
   text-align: center;
@@ -5784,42 +5765,66 @@ button#homepage {
   font-family: 'Open Sans';
   font-style: italic; }
 
+.searcharea {
+  padding-top: 5em; }
+
 .search-container {
   max-width: 960px;
   display: block;
-  margin: 0 auto; }
-
-.vet-search-container {
-  max-width: 960px;
-  display: block;
-  margin: 0 auto; }
-
-input#search-bar {
   margin: 0 auto;
-  margin-top: 20rem;
+  position: relative; }
+
+.search-container > div {
+  width: 100%;
+  padding-right: 65px; }
+
+.search-icon {
+  position: absolute;
+  height: 65px;
+  width: 65px;
+  top: 0px;
+  right: 0px;
+  display: inline-block;
+  background-image: url(../images/search-icon.png);
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+#search-bar {
+  margin: 0 auto;
   width: 100%;
   height: 65px;
   padding: 0 20px;
   font-size: 1em;
   border: 2px solid white;
   outline: none; }
-  input#search-bar:focus {
+  #search-bar:focus {
     border: 2px solid black;
     -webkit-transition: 0.35s ease;
             transition: 0.35s ease;
     color: black; }
-    input#search-bar:focus::-webkit-input-placeholder {
+    #search-bar:focus::-webkit-input-placeholder {
       -webkit-transition: opacity 0.45s ease;
               transition: opacity 0.45s ease;
       opacity: 0; }
-    input#search-bar:focus::-moz-placeholder {
+    #search-bar:focus::-moz-placeholder {
       transition: opacity 0.45s ease;
       opacity: 0; }
-    input#search-bar:focus:-ms-placeholder {
+    #search-bar:focus:-ms-placeholder {
       transition: opacity 0.45s ease;
       opacity: 0; }
 
-input#vetsearchbar {
+.searchitem {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-right: 65px; }
+
+.vet-search-container {
+  max-width: 960px;
+  display: block;
+  margin: 0 auto; }
+
+#vetsearchbar {
   margin: 0 auto;
   margin-top: 3rem;
   width: 100%;
@@ -5830,19 +5835,19 @@ input#vetsearchbar {
   -ms-transform: translate(-50%, -50%);
   display: block;
   outline: none; }
-  input#vetsearchbar:focus {
+  #vetsearchbar:focus {
     border: 2px solid black;
     -webkit-transition: 0.35s ease;
             transition: 0.35s ease;
     color: black; }
-    input#vetsearchbar:focus::-webkit-input-placeholder {
+    #vetsearchbar:focus::-webkit-input-placeholder {
       -webkit-transition: opacity 0.45s ease;
               transition: opacity 0.45s ease;
       opacity: 0; }
-    input#vetsearchbar:focus::-moz-placeholder {
+    #vetsearchbar:focus::-moz-placeholder {
       transition: opacity 0.45s ease;
       opacity: 0; }
-    input#vetsearchbar:focus:-ms-placeholder {
+    #vetsearchbar:focus:-ms-placeholder {
       transition: opacity 0.45s ease;
       opacity: 0; }
 
@@ -5868,14 +5873,6 @@ input#vetemailaddress {
       transition: opacity 0.45s ease;
       opacity: 0; }
 
-.search-icon {
-  position: relative;
-  float: right;
-  width: 100px;
-  height: 100px;
-  top: -80px;
-  right: -80px; }
-
 #vetsubmitbutton {
   width: 130px;
   height: 60px;
@@ -5893,22 +5890,42 @@ input#vetemailaddress {
   font-style: italic; }
 
 div.transparentlistings {
-  max-width: 758px;
-  margin: 0 auto;
   display: block;
-  -ms-transform: translate(-50%, -50%);
   border: 2px solid white;
   background: rgba(255, 255, 255, 0.6);
   margin-top: 1rem;
   margin-bottom: 1rem; }
 
 div.transparentoptins {
-  max-width: 758px;
-  margin: 0 auto;
   display: block;
-  -ms-transform: translate(-50%, -50%);
-  border: 2px solid white;
+  border-radius: 15px;
   background: rgba(255, 255, 255, 0.6);
   margin-top: 1rem;
   margin-bottom: 1rem;
-  padding: 1rem 1rem 1rem 1rem; }
+  padding: 1rem;
+  -webkit-animation: fadeIn 0.25s ease both;
+          animation: fadeIn 0.25s ease both; }
+
+/**
+ * animations
+ */
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2em);
+            transform: translateY(-2em); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2em);
+            transform: translateY(-2em); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }

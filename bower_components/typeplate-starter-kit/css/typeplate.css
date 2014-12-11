@@ -134,7 +134,8 @@ body {
   hyphens: auto;
   word-wrap: normal;
   color: #444444;
-  margin-top: 7rem;
+  /*margin-top: 7rem;*/
+  /*height: 50%;*/
 }
 
 

@@ -16,7 +16,7 @@
 
 		events: {
 			"submit #searchform": "render",
-			"click #magglass": "render"
+			"click .search-icon": "render"
 			// "change input": "liveFilter"
 		},
 

@@ -5,7 +5,7 @@ window.app = window.app || {};
 
 var AppView = Backbone.View.extend({
 
-	el: document.body,
+	el: document.body.querySelector(".dynamic-content"),
 	
 	events: {
 		"click #homepage": "closeThankYou"

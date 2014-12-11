@@ -1,19 +1,17 @@
 @import url('//fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,400,700,300');
 @import url('//fonts.googleapis.com/css?family=Lato:300,400,700');
 @import url('//fonts.googleapis.com/css?family=Raleway');
-@import '../bower_components/foundation/scss/foundation/settings';
-@import '../bower_components/foundation/scss/foundation';
-
+@import'../bower_components/foundation/scss/foundation/settings';
+@import'../bower_components/foundation/scss/foundation';
 @mixin gridify($col, $width, $gutter: 2) {
-    @media only screen and (min-width: #{$width}#{"px"}){
-        .grid-#{$col}-#{$width} {
+    @media only screen and (min-width: #{$width}#{"px"}) {
+        .grid-#{$col}-#{$width}{
             & > * {
                 width: #{(100 / $col) - $gutter}#{"%"};
             }
         }
     }
 }
-
 /**
  * BOX-SIZING
  */
@@ -21,7 +19,6 @@
 *, *:before, *:after {
     box-sizing: border-box;
 }
-
 /**
  * GRIDS
  */
@@ -32,7 +29,6 @@
     font-size: 0;
     text-align: justify;
     position: relative;
-
     & > * {
         font-size: medium;
         text-align: left;
@@ -40,7 +36,6 @@
         width: 100%;
         vertical-align: top;
     }
-
     &:after {
         display: inline-block;
         width: 100%;
@@ -48,107 +43,84 @@
         font-size: medium;
     }
 }
-
 @include gridify(2, 400);
 @include gridify(4, 600);
-
 /**
  * GENERAL
  */
-
-body {
-    transition: opacity .25s ease;
-    height: 100%;
+html {
     background: url('./emma.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
-    //margin-top: 7%;
 }
-
-.header {
+html::after {
+    content: "";
+    display: block;
     width: 100%;
+    height: 100%;
     position: fixed;
     top: 0;
-    //display: block;
-    background:rgba(10,197,244,1);
-    z-index: 1;
-}
-
-// .vet-container {
-//     background: url('./emma.jpg');
-//     background-size: cover;
-//     background-attachment: fixed;
-//     display: inline;
-//     width: 100%;
-//     height: 100%;
-// }
-
-//**********FOOTER**********
-
-.footer {
-    width: 100%;
-    height: 50px;
-    bottom: 0;
-    position: fixed;
-    background:rgba(10,197,244,1);
-    z-index: 1;
-
-}
-
-#facebookicon {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    padding-right: 6rem;
-    padding-bottom: .25rem;
-    color: white;
-}
-
-#twittericon {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    padding-right: 3.5rem;
-    padding-bottom: .25rem;
-    color: white;
-}
-
-#instagramicon {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    padding-right: 1rem;
-    padding-bottom: .25rem;
-    color: white;
-}
-
-//******VET LOGIN HYPERLINK AND ARROW*******//
-
-#vetlink{
-    position: fixed;
     left: 0;
-    bottom: 0;
-    padding-left: 1rem;
-    padding-bottom: .25rem;
+    background-color: rgba(0,0,0,0.5);
+    z-index: -1;
 }
-
-#vetlink a{
+html, body {
+    height: auto !important;
+}
+body {
+    min-height: 100vh;
+    transition: opacity .25s ease;
+    // height: 100%;
+    background-color: transparent;
+}
+.header {
+    width: 100%;
+    background: rgba(10, 197, 244, 1);
+    z-index: 1;
+}
+//**********FOOTER**********
+.footer {
+    // width: 100%;
+    // height: 50px;
+    margin-top: 10em;
+    position: relative;
+    background: rgba(10, 197, 244, 1);
+    // z-index: 1;
+}
+.icons {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    padding: .25rem .5rem;
+}
+#facebookicon, #twittericon,
+#instagramicon {
+    color: white;
+}
+//******VET LOGIN HYPERLINK AND ARROW*******//
+#vetlink {
+    position: relative;
+    padding: .5rem 1rem;
+}
+#vetlink h4 {
+    margin: 0;
+}
+#vetlink a {
     font-family: 'Open Sans';
     font-weight: 400;
     color: white;
     font-size: 1rem;
 }
-
-img#arrow{
-    position: fixed;
-    left: 1rem;
-    bottom: 4rem;
+img#arrow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(10px, -120%);
     max-width: 125px;
     max-height: 125px;
 }
-
 //******MAIN PAGE HEADER TITLE********//
-
 p#header {
     color: white;
     font-family: 'Open Sans';
@@ -158,7 +130,6 @@ p#header {
     margin-bottom: .25rem;
     margin-left: 2rem;
 }
-
 p#faqs {
     color: white;
     font-family: 'Open Sans';
@@ -169,7 +140,6 @@ p#faqs {
     padding-right: 20%;
     padding-top: 3rem;
 }
-
 p#about {
     color: white;
     font-family: 'Open Sans';
@@ -180,7 +150,6 @@ p#about {
     padding-right: 15%;
     padding-top: 3rem;
 }
-
 p#contact {
     color: white;
     font-family: 'Open Sans';
@@ -191,72 +160,47 @@ p#contact {
     padding-right: 9%;
     padding-top: 3rem;
 }
-
 //*******MAIN PAGE SLOGANS*********//
-
-div.sloganone {
-    top: 0;
-    position: fixed;
-    left: 50%;
-    margin-top: 7.5%;
-    max-width: 960px;
-    max-height: 50%;
-    z-index: -1;
-}
-
-div.slogantwo {
-    top: 0;
-    position: fixed;
-    left: 40%;
-    margin-top: 12.5%;
-    max-width: 960px;
-    z-index: -1;
-    //max-height: 50%;
-    //word-wrap: normal;
-}
-
-div.sloganthree {
-    top: 0;
-    position: fixed;
-    left: 60%;
-    margin-top: 17.5%;
-    max-width: 960px;
-    max-height: 50%;
-    z-index: -1;
-
-}
-
-#sloganone {
+.slogans {
+    padding: 7em 0 .5em 0;
     font-family: 'Lato';
     font-weight: 300;
-    font-size: 3rem;    
-    //padding-bottom: 1rem;
-  
+    max-width: 960px;
+    text-align: center;
+    margin: 0 auto;
 }
-
-#slogantwo {
-    font-family: 'Lato';
-    font-weight: 400;
+.slogans p {
     font-size: 3rem;
-    //padding-bottom: 1rem;
-  
+    margin-bottom: 0;
+    line-height: 1em;
+    color: white;
 }
-
-#sloganthree {
-    font-family: 'Lato';
-    font-weight: 700;
-    font-size: 3rem;
-  //  text-indent: 150px;
-  
+.sloganone {
+    // margin-top: 7.5%;
+    // z-index: -1;
 }
+.slogantwo {
+    // left: 40%;
+    // margin-top: 12.5%;
+    // z-index: -1;
 
+    p {
+        font-weight: 400;
+        font-style: italic;
+    }
+}
+.sloganthree {
+    // left: 60%;
+    // margin-top: 17.5%;
+    p {
+        font-weight: 700;
+    }
+}
 //*********VETLOGIN EXPLANATION OF WHY HOW WHEN ETC**********//
-
 h3 {
     font-family: 'Open Sans', sans-serif;
 }
-
-div.transparent{
+div.transparent {
     max-width: 960px;
     margin: 0 auto;
     margin-top: 6rem;
@@ -266,33 +210,26 @@ div.transparent{
     background: rgba(255, 255, 255, 0.6);
     font-family: 'Raleway', sans-serif;
     padding: .5rem 1rem .5rem 1rem;
-
 }
-
 //*******SCHEDULE FORM********//
-
-h3#scheduleheader{
+h3#scheduleheader {
     padding: .5rem;
 }
-
-input#apptreason{
+input#apptreason {
     margin-top: .5rem;
- }
-
-#userschedulebutton{
+}
+#userschedulebutton {
     //background-color: #2D4E57;
-    background:rgba(45, 78, 87, .7);
+    background: rgba(45, 78, 87, .7);
     color: white;
     max-height: 50px;
     line-height: 0;
     font-family: 'Open Sans';
     font-style: italic;
-
 }
-
-#submitemailtovet{
+#submitemailtovet {
     //background-color: #2D4E57;
-    background:rgba(45, 78, 87, .7);
+    background: rgba(45, 78, 87, .7);
     color: white;
     max-width: 130px;
     max-height: 50px;
@@ -300,42 +237,34 @@ input#apptreason{
     font-family: 'Open Sans';
     font-style: italic;
 }
-
-form.transparentform{
-    max-width: 758px;
-    margin: 0 auto;
-    display: block;
-    -ms-transform: translate(-50%,-50%);
-    border: 2px solid white;
-    background:rgba(255,255,255,0.6);
+.transparentform {
+    border-radius: 15px;
+    background: rgba(0, 255, 255, 0.6);
     margin-top: 1rem;
     margin-bottom: 1rem;
-    padding: 1rem 1rem 1rem 1rem;
+    padding: 1rem;
+    animation: fadeIn .25s ease both;
 }
-
 //********POPUP BOX UPON SUBMITTING SCHEDULE FORM*********//
-
-p.thankyou{
+p.thankyou {
     //display: none;
     // margin: 0 auto;
     text-align: center;
     color: black;
     padding-top: .5rem;
 }
-
-div#myModal{
+div#myModal {
     //max-width: 960px;
     //margin: 0 auto;
     //display: block;
     //-ms-transform: translate(-50%,-50%);
     border: 2px solid white;
-    background:rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.9);
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding: 1rem 1rem 1rem 1rem;
 }
-
-button#homepage{
+button#homepage {
     background-color: #2D4E57;
     color: white;
     margin: 0 auto;
@@ -343,163 +272,163 @@ button#homepage{
     font-family: 'Open Sans';
     font-style: italic;
 }
-
 //*********MAIN SEARCH CONTAINER BOX ON HOMEPAGE*******//
-
-
-.search-container {
-  max-width: 960px;
-  display: block;
-  margin: 0 auto;
-  //position: fixed;
-
+.searcharea {
+    padding-top: 5em;
 }
-
+.search-container {
+    max-width: 960px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+.search-container > div {
+    width: 100%;
+    padding-right: 65px;
+}
+.search-icon {
+    position: absolute;
+    height: 65px;
+    width: 65px;
+    top: 0px;
+    right: 0px;
+    display:inline-block;
+    background-image: url(../images/search-icon.png);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#search-bar {
+    margin: 0 auto;
+    width: 100%;
+    height: 65px;
+    padding: 0 20px;
+    font-size: 1em;
+    border: 2px solid white;
+    outline: none;
+    &:focus {
+        border: 2px solid black;
+        transition: 0.35s ease;
+        color: black;
+        &::-webkit-input-placeholder {
+            transition: opacity 0.45s ease;
+            opacity: 0;
+        }
+        &::-moz-placeholder {
+            transition: opacity 0.45s ease;
+            opacity: 0;
+        }
+        &:-ms-placeholder {
+            transition: opacity 0.45s ease;
+            opacity: 0;
+        }
+    }
+}
+.searchitem {
+    max-width: 960px;
+    margin: 0 auto;
+    padding-right: 65px;
+}
 //********VET SEARCH BOX TO OPT IN ON VETLOGIN PAGE********//
-
 .vet-search-container {
     max-width: 960px;
     display: block;
     margin: 0 auto;
 }
-    
 
 //*******MAIN SEARCH BOX AND VET SEARCH BOX (SHARE SAME PROPERTIES)********//
-
-input#search-bar {
-  margin: 0 auto;
-  margin-top: 20rem;
-  width: 100%;
-  height: 65px;
-  padding: 0 20px;
-  font-size: 1em;
-  border: 2px solid white;
-  outline: none;
-  &:focus{
-    border: 2px solid black;
-    transition: 0.35s ease;
-    color: black;
-    &::-webkit-input-placeholder{
-      transition: opacity 0.45s ease; 
-      opacity: 0;
-     }
-    &::-moz-placeholder {
-      transition: opacity 0.45s ease; 
-      opacity: 0;
-     }
-    &:-ms-placeholder {
-     transition: opacity 0.45s ease; 
-     opacity: 0;
-     }    
-   }
- }
-
-input#vetsearchbar {
-  margin: 0 auto;
-  margin-top: 3rem;
-  width: 100%;
-  height: 65px;
-  padding: 0 20px;
-  font-size: 1em;
-  border: 2px solid white;
-  -ms-transform: translate(-50%, -50%);
-  display: block;
-  outline: none;
-  &:focus{
-    border: 2px solid black;
-    transition: 0.35s ease;
-    color: black;
-    &::-webkit-input-placeholder{
-      transition: opacity 0.45s ease; 
-      opacity: 0;
-     }
-    &::-moz-placeholder {
-      transition: opacity 0.45s ease; 
-      opacity: 0;
-     }
-    &:-ms-placeholder {
-     transition: opacity 0.45s ease; 
-     opacity: 0;
-     }    
-   }
- }
-
- //*******MAIN INPUT BOX FOR VETS EMAIL WHEN THEY OPT IN********//
-
- input#vetemailaddress {
+#vetsearchbar {
+    margin: 0 auto;
+    margin-top: 3rem;
+    width: 100%;
+    height: 65px;
+    padding: 0 20px;
+    font-size: 1em;
+    border: 2px solid white;
+    -ms-transform: translate(-50%, -50%);
+    display: block;
+    outline: none;
+    &:focus {
+        border: 2px solid black;
+        transition: 0.35s ease;
+        color: black;
+        &::-webkit-input-placeholder {
+            transition: opacity 0.45s ease;
+            opacity: 0;
+        }
+        &::-moz-placeholder {
+            transition: opacity 0.45s ease;
+            opacity: 0;
+        }
+        &:-ms-placeholder {
+            transition: opacity 0.45s ease;
+            opacity: 0;
+        }
+    }
+}
+//*******MAIN INPUT BOX FOR VETS EMAIL WHEN THEY OPT IN********//
+input#vetemailaddress {
     max-width: 500px;
     height: 40px;
     font-size: 14px;
     border: 2px solid black;
     outline: none;
-    &:focus{
+    &:focus {
         border: 2px solid black;
         transition: 0.35s ease;
         color: black;
-        &::-webkit-input-placeholder{
-          transition: opacity 0.45s ease; 
-          opacity: 0;
-         }
+        &::-webkit-input-placeholder {
+            transition: opacity 0.45s ease;
+            opacity: 0;
+        }
         &::-moz-placeholder {
-          transition: opacity 0.45s ease; 
-          opacity: 0;
-         }
+            transition: opacity 0.45s ease;
+            opacity: 0;
+        }
         &:-ms-placeholder {
-         transition: opacity 0.45s ease; 
-         opacity: 0;
-     }    
-   }
- }
-
- 
-.search-icon{
-  position: relative;
-  float: right;
-  width: 100px;
-  height: 100px;
-  top: -80px;
-  right: -80px;
+            transition: opacity 0.45s ease;
+            opacity: 0;
+        }
+    }
 }
-
-#vetsubmitbutton{
-  width: 130px;
-  height: 60px;
-  background-color: #2D4E57;
-  color: white;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  font-family: 'Open Sans';
-  font-style: italic;
+#vetsubmitbutton {
+    width: 130px;
+    height: 60px;
+    background-color: #2D4E57;
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'Open Sans';
+    font-style: italic;
 }
-
-#vetconfirmemail{
+#vetconfirmemail {
     background-color: #2D4E57;
     color: white;
     font-family: 'Open Sans';
     font-style: italic;
 }
-
-
-div.transparentlistings{
-    max-width: 758px;
-    margin: 0 auto;
+div.transparentlistings {
     display: block;
-    -ms-transform: translate(-50%,-50%);
     border: 2px solid white;
-    background:rgba(255,255,255,0.6);
+    background: rgba(255, 255, 255, 0.6);
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
-
-div.transparentoptins{
-    max-width: 758px;
-    margin: 0 auto;
+div.transparentoptins {
     display: block;
-    -ms-transform: translate(-50%,-50%);
-    border: 2px solid white;
-    background:rgba(255,255,255,0.6);
+    // border: 2px solid white;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.6);
     margin-top: 1rem;
     margin-bottom: 1rem;
-    padding: 1rem 1rem 1rem 1rem;
+    padding: 1rem;
+    animation: fadeIn .25s ease both;
 }
 
+/**
+ * animations
+ */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-2em); }
+    100% { opacity: 1; transform: translateY(0); }
+}
