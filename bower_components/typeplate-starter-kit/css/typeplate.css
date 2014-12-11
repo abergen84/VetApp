@@ -132,8 +132,9 @@ body {
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
-  word-wrap: break-word;
+  word-wrap: normal;
   color: #444444;
+  margin-top: 7rem;
 }
 
 
@@ -271,7 +272,7 @@ h6,
  */
 
 p {
-  margin: auto auto 1.5em; /* bottom margin for paragraphs */
+  /*margin: auto auto 1.5em;*/ /* bottom margin for paragraphs */
 }
 
 p + p {

@@ -9,12 +9,13 @@
 		template: 'search',
 
 		initialize: function(){
-			this.listenTo(app.VetsFirebase, "sync", this.render)
+			this.listenTo(app.VetsFirebase, "sync") //took out ", this.render" to prevent it from appearing on front page
 			// this.listenTo(app.VetsFirebase, "add", this.render)
 		},
 
 		events: {
-			"submit #searchform": "render"
+			"submit #searchform": "render",
+			"click #magglass": "render"
 			// "change input": "liveFilter"
 		},
 

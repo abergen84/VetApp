@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,400,700,300);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 @import '../bower_components/foundation/scss/foundation/settings';
 @import '../bower_components/foundation/scss/foundation';
@@ -55,37 +56,80 @@
  * GENERAL
  */
 
-.header {
-    width: 100%;
-    display: block;
-    background:rgba(10,197,244,0.8);
-}
-
-.footer {
-    width: 100%;
-    height: 7%;
-    bottom: 0;
-    position: fixed;
-    background:rgba(10,197,244,1);
-
-}
-
 body {
     transition: opacity .25s ease;
     height: 100%;
     background: url('./emma.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
+    //margin-top: 7%;
+}
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    //display: block;
+    background:rgba(10,197,244,1);
+    z-index: 1;
+}
+
+// .vet-container {
+//     background: url('./emma.jpg');
+//     background-size: cover;
+//     background-attachment: fixed;
+//     display: inline;
+//     width: 100%;
+//     height: 100%;
+// }
+
+//**********FOOTER**********
+
+.footer {
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    position: fixed;
+    background:rgba(10,197,244,1);
+    z-index: 1;
+
+}
+
+#facebookicon {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding-right: 6rem;
+    padding-bottom: .25rem;
+    color: white;
+}
+
+#twittericon {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding-right: 3.5rem;
+    padding-bottom: .25rem;
+    color: white;
+}
+
+#instagramicon {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding-right: 1rem;
+    padding-bottom: .25rem;
+    color: white;
 }
 
 //******VET LOGIN HYPERLINK AND ARROW*******//
 
 #vetlink{
     position: fixed;
-    right: 0;
-    top: 0;
-    padding-right: 1rem;
-    padding-top: 2rem;
+    left: 0;
+    bottom: 0;
+    padding-left: 1rem;
+    padding-bottom: .25rem;
 }
 
 #vetlink a{
@@ -96,29 +140,133 @@ body {
 }
 
 img#arrow{
-    position: absolute;
-    right: 1rem;
-    top: 5rem;
+    position: fixed;
+    left: 1rem;
+    bottom: 4rem;
     max-width: 125px;
     max-height: 125px;
 }
 
 //******MAIN PAGE HEADER TITLE********//
 
-.header p {
+p#header {
     color: white;
     font-family: 'Open Sans';
     font-size: 3rem;
     font-weight: 400;
     //font-style: italic;
-    margin-bottom: 1rem;
+    margin-bottom: .25rem;
     margin-left: 2rem;
+}
+
+p#faqs {
+    color: white;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding-right: 20%;
+    padding-top: 3rem;
+}
+
+p#about {
+    color: white;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding-right: 15%;
+    padding-top: 3rem;
+}
+
+p#contact {
+    color: white;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding-right: 9%;
+    padding-top: 3rem;
+}
+
+//*******MAIN PAGE SLOGANS*********//
+
+div.sloganone {
+    top: 0;
+    position: fixed;
+    left: 50%;
+    margin-top: 7.5%;
+    max-width: 960px;
+    max-height: 50%;
+    z-index: -1;
+}
+
+div.slogantwo {
+    top: 0;
+    position: fixed;
+    left: 40%;
+    margin-top: 12.5%;
+    max-width: 960px;
+    z-index: -1;
+    //max-height: 50%;
+    //word-wrap: normal;
+}
+
+div.sloganthree {
+    top: 0;
+    position: fixed;
+    left: 60%;
+    margin-top: 17.5%;
+    max-width: 960px;
+    max-height: 50%;
+    z-index: -1;
+
+}
+
+#sloganone {
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 3rem;    
+    //padding-bottom: 1rem;
+  
+}
+
+#slogantwo {
+    font-family: 'Lato';
+    font-weight: 400;
+    font-size: 3rem;
+    //padding-bottom: 1rem;
+  
+}
+
+#sloganthree {
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 3rem;
+  //  text-indent: 150px;
+  
 }
 
 //*********VETLOGIN EXPLANATION OF WHY HOW WHEN ETC**********//
 
 h3 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+div.transparent{
+    max-width: 960px;
+    margin: 0 auto;
+    margin-top: 6rem;
+    display: block;
+    -ms-transform: translate(-50%, -50%);
+    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.6);
     font-family: 'Raleway', sans-serif;
+    padding: .5rem 1rem .5rem 1rem;
+
 }
 
 //*******SCHEDULE FORM********//
@@ -132,18 +280,37 @@ input#apptreason{
  }
 
 #userschedulebutton{
-    background-color: green;
+    //background-color: #2D4E57;
+    background:rgba(45, 78, 87, .7);
     color: white;
     max-height: 50px;
     line-height: 0;
+    font-family: 'Open Sans';
+    font-style: italic;
+
 }
 
 #submitemailtovet{
-    background-color: green;
+    //background-color: #2D4E57;
+    background:rgba(45, 78, 87, .7);
     color: white;
     max-width: 130px;
     max-height: 50px;
     margin-top: .5rem;
+    font-family: 'Open Sans';
+    font-style: italic;
+}
+
+form.transparentform{
+    max-width: 758px;
+    margin: 0 auto;
+    display: block;
+    -ms-transform: translate(-50%,-50%);
+    border: 2px solid white;
+    background:rgba(255,255,255,0.6);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
 }
 
 //********POPUP BOX UPON SUBMITTING SCHEDULE FORM*********//
@@ -169,18 +336,23 @@ div#myModal{
 }
 
 button#homepage{
-    background-color: green;
+    background-color: #2D4E57;
     color: white;
     margin: 0 auto;
-    max-width: 100px;
+    max-width: 200px;
+    font-family: 'Open Sans';
+    font-style: italic;
 }
 
 //*********MAIN SEARCH CONTAINER BOX ON HOMEPAGE*******//
+
 
 .search-container {
   max-width: 960px;
   display: block;
   margin: 0 auto;
+  //position: fixed;
+
 }
 
 //********VET SEARCH BOX TO OPT IN ON VETLOGIN PAGE********//
@@ -194,14 +366,44 @@ button#homepage{
 
 //*******MAIN SEARCH BOX AND VET SEARCH BOX (SHARE SAME PROPERTIES)********//
 
-input#search-bar, input#vetsearchbar {
+input#search-bar {
   margin: 0 auto;
-  margin-top: 2rem;
+  margin-top: 20rem;
   width: 100%;
   height: 65px;
   padding: 0 20px;
   font-size: 1em;
   border: 2px solid white;
+  outline: none;
+  &:focus{
+    border: 2px solid black;
+    transition: 0.35s ease;
+    color: black;
+    &::-webkit-input-placeholder{
+      transition: opacity 0.45s ease; 
+      opacity: 0;
+     }
+    &::-moz-placeholder {
+      transition: opacity 0.45s ease; 
+      opacity: 0;
+     }
+    &:-ms-placeholder {
+     transition: opacity 0.45s ease; 
+     opacity: 0;
+     }    
+   }
+ }
+
+input#vetsearchbar {
+  margin: 0 auto;
+  margin-top: 3rem;
+  width: 100%;
+  height: 65px;
+  padding: 0 20px;
+  font-size: 1em;
+  border: 2px solid white;
+  -ms-transform: translate(-50%, -50%);
+  display: block;
   outline: none;
   &:focus{
     border: 2px solid black;
@@ -262,34 +464,24 @@ input#search-bar, input#vetsearchbar {
 #vetsubmitbutton{
   width: 130px;
   height: 60px;
-  background-color: green;
+  background-color: #2D4E57;
   color: white;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  font-family: 'Open Sans';
+  font-style: italic;
 }
 
 #vetconfirmemail{
-    background-color: green;
+    background-color: #2D4E57;
     color: white;
-}
-
-
-
-div.transparent{
-    max-width: 960px;
-    margin: 0 auto;
-    display: block;
-    -ms-transform: translate(-50%, -50%);
-    border: 2px solid white;
-    background: rgba(255, 255, 255, 0.6);
-    font-family: 'Raleway', sans-serif;
-    padding: .5rem 1rem .5rem 1rem;
-
+    font-family: 'Open Sans';
+    font-style: italic;
 }
 
 
 div.transparentlistings{
-    max-width: 960px;
+    max-width: 758px;
     margin: 0 auto;
     display: block;
     -ms-transform: translate(-50%,-50%);
@@ -300,7 +492,7 @@ div.transparentlistings{
 }
 
 div.transparentoptins{
-    max-width: 960px;
+    max-width: 758px;
     margin: 0 auto;
     display: block;
     -ms-transform: translate(-50%,-50%);
@@ -311,14 +503,3 @@ div.transparentoptins{
     padding: 1rem 1rem 1rem 1rem;
 }
 
-form.transparentform{
-    max-width: 960px;
-    margin: 0 auto;
-    display: block;
-    -ms-transform: translate(-50%,-50%);
-    border: 2px solid white;
-    background:rgba(255,255,255,0.6);
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding: 1rem 1rem 1rem 1rem;
-}

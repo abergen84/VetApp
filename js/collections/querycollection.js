@@ -14,7 +14,6 @@ window.app = window.app || {};
 				self.filteredData = collection.filter(function(m){
 					return m.get('name') && m.get('name').indexOf(self.searchTerm) > -1;
 				});
-				debugger;
 			})		
 		}
 
