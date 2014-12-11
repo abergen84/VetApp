@@ -1,6 +1,6 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,400,700,300);
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
-@import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url('//fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,400,700,300');
+@import url('//fonts.googleapis.com/css?family=Lato:300,400,700');
+@import url('//fonts.googleapis.com/css?family=Raleway');
 meta.foundation-version {
   font-family: "/5.4.7/"; }
 
