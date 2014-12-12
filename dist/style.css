@@ -5657,6 +5657,10 @@ p#header {
           transform: translateY(50%);
   padding: 0.25rem 0.5rem; }
 
+@media all and (max-width: 775px) {
+  .links {
+    display: none; } }
+
 #faqs, #about, #contact {
   color: white;
   font-family: 'Open Sans';
