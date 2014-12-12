@@ -10,7 +10,7 @@
 		template: 'search',
 
 		initialize: function(){
-			//this.listenTo(app.VetsFirebase, "sync", this.render) //took out ", this.render" to prevent it from appearing on front page
+			this.listenTo(app.VetsFirebase, "sync", this.render) //took out ", this.render" to prevent it from appearing on front page
 			// this.listenTo(app.VetsFirebase, "add", this.render)
 		},
 
