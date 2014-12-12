@@ -140,36 +140,12 @@ p#header {
     color: white;
     font-family: 'Open Sans';
     font-weight: 700;
-    // position: fixed;
-    // right: 0;
-    // top: 0;
-    // padding-right: 20%;
-    // padding-top: 3rem;
 }
-// #about {
-//     color: white;
-//     font-family: 'Open Sans';
-//     font-weight: 700;
-//     position: fixed;
-//     right: 0;
-//     top: 0;
-//     padding-right: 15%;
-//     padding-top: 3rem;
-// }
-// #contact {
-//     color: white;
-//     font-family: 'Open Sans';
-//     font-weight: 700;
-//     position: fixed;
-//     right: 0;
-//     top: 0;
-//     padding-right: 9%;
-//     padding-top: 3rem;
-// }
+
 //*******MAIN PAGE SLOGANS*********//
 .slogans {
-    padding: 4em 0 .5em 0; //padding was 7em
-    font-family: 'Lato';
+    padding: 2em 0 2.8em 0; //padding was 2em 0 2.8em 0; (gets footer to be on the page versus right off)
+    font-family: 'Lato';    //other option was padding 7em 0 1.5em 0; (gets header right off page)
     font-weight: 300;
     max-width: 960px;
     text-align: center;
@@ -214,7 +190,7 @@ div.transparent {
     -ms-transform: translate(-50%, -50%);
     border: 2px solid white;
     background: rgba(255, 255, 255, 0.6);
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     padding: .5rem 1rem .5rem 1rem;
 }
 //*******SCHEDULE FORM********//
@@ -226,6 +202,7 @@ input#apptreason {
 }
 #userschedulebutton {
     //background-color: #2D4E57;
+    border-radius: 15px;
     background: rgba(45, 78, 87, .7);
     color: white;
     max-height: 50px;
@@ -235,6 +212,7 @@ input#apptreason {
 }
 #submitemailtovet {
     //background-color: #2D4E57;
+    border-radius: 15px;
     background: rgba(45, 78, 87, .7);
     color: white;
     max-width: 130px;
@@ -245,7 +223,7 @@ input#apptreason {
 }
 .transparentform {
     border-radius: 15px;
-    background: rgba(0, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.8);
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding: 1rem;
@@ -271,6 +249,7 @@ div#myModal {
     padding: 1rem 1rem 1rem 1rem;
 }
 button#homepage {
+    border-radius: 15px;
     background-color: #2D4E57;
     color: white;
     margin: 0 auto;
@@ -398,6 +377,7 @@ input#vetemailaddress {
     }
 }
 #vetsubmitbutton {
+    border-radius: 15px;
     width: 130px;
     height: 60px;
     background-color: #2D4E57;
@@ -408,20 +388,26 @@ input#vetemailaddress {
     font-style: italic;
 }
 #vetconfirmemail {
+    border-radius: 15px;
     background-color: #2D4E57;
     color: white;
     font-family: 'Open Sans';
     font-style: italic;
+    margin: .5em .5em .5em .5em;
 }
 div.transparentlistings {
+    border-radius: 15px;
     display: block;
-    border: 2px solid white;
+    //border: 2px solid white;
     background: rgba(255, 255, 255, 0.6);
     margin-top: 1rem;
     margin-bottom: 1rem;
+    margin-right: 5em;
+    margin-left: 5em;
 }
 div.transparentoptins {
     display: block;
+    max-width: 960px;
     // border: 2px solid white;
     border-radius: 15px;
     background: rgba(255, 255, 255, 0.6);
@@ -429,6 +415,7 @@ div.transparentoptins {
     margin-bottom: 1rem;
     padding: 1rem;
     animation: fadeIn .25s ease both;
+    padding: 1rem;
 }
 
 /**

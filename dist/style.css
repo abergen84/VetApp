@@ -5663,7 +5663,7 @@ p#header {
   font-weight: 700; }
 
 .slogans {
-  padding: 4em 0 0.5em 0;
+  padding: 2em 0 2.8em 0;
   font-family: 'Lato';
   font-weight: 300;
   max-width: 960px;
@@ -5694,7 +5694,7 @@ div.transparent {
   -ms-transform: translate(-50%, -50%);
   border: 2px solid white;
   background: rgba(255, 255, 255, 0.6);
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   padding: 0.5rem 1rem 0.5rem 1rem; }
 
 h3#scheduleheader {
@@ -5704,6 +5704,7 @@ input#apptreason {
   margin-top: 0.5rem; }
 
 #userschedulebutton {
+  border-radius: 15px;
   background: rgba(45, 78, 87, 0.7);
   color: white;
   max-height: 50px;
@@ -5712,6 +5713,7 @@ input#apptreason {
   font-style: italic; }
 
 #submitemailtovet {
+  border-radius: 15px;
   background: rgba(45, 78, 87, 0.7);
   color: white;
   max-width: 130px;
@@ -5722,7 +5724,7 @@ input#apptreason {
 
 .transparentform {
   border-radius: 15px;
-  background: rgba(0, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -5742,6 +5744,7 @@ div#myModal {
   padding: 1rem 1rem 1rem 1rem; }
 
 button#homepage {
+  border-radius: 15px;
   background-color: #2D4E57;
   color: white;
   margin: 0 auto;
@@ -5858,6 +5861,7 @@ input#vetemailaddress {
       opacity: 0; }
 
 #vetsubmitbutton {
+  border-radius: 15px;
   width: 130px;
   height: 60px;
   background-color: #2D4E57;
@@ -5868,27 +5872,33 @@ input#vetemailaddress {
   font-style: italic; }
 
 #vetconfirmemail {
+  border-radius: 15px;
   background-color: #2D4E57;
   color: white;
   font-family: 'Open Sans';
-  font-style: italic; }
+  font-style: italic;
+  margin: 0.5em 0.5em 0.5em 0.5em; }
 
 div.transparentlistings {
+  border-radius: 15px;
   display: block;
-  border: 2px solid white;
   background: rgba(255, 255, 255, 0.6);
   margin-top: 1rem;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  margin-right: 5em;
+  margin-left: 5em; }
 
 div.transparentoptins {
   display: block;
+  max-width: 960px;
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.6);
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
   -webkit-animation: fadeIn 0.25s ease both;
-          animation: fadeIn 0.25s ease both; }
+          animation: fadeIn 0.25s ease both;
+  padding: 1rem; }
 
 /**
  * animations
